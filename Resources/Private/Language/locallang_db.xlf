@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-12T13:58:46Z" product-name="alm_gallery">
+		<header/>
+		<body>
+			<trans-unit id="tx_almgallery_foldergallery.title">
+				<source>FolderGallery</source>
+			</trans-unit>
+			<trans-unit id="tx_almgallery_foldergallery.description">
+				<source>FolderGallery - a simple folder gallery</source>
+			</trans-unit>
+			<trans-unit id="tx_almgallery_foldergallery.sheet_1">
+				<source>Plugin Settings</source>
+			</trans-unit>
+			<trans-unit id="tx_almgallery_foldergallery.templateFile">
+				<source>Template File</source>
+			</trans-unit>
+			<trans-unit id="tx_almgallery_foldergallery.folderPath">
+				<source>Path</source>
+			</trans-unit>
+			<trans-unit id="tx_almgallery_foldergallery.metaTypes">
+				<source>Meta Types</source>
+			</trans-unit>
+			<trans-unit id="tx_almgallery_foldergallery.metaValues">
+				<source>Meta Values</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

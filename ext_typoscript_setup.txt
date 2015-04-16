@@ -1,0 +1,13 @@
+plugin.tx_almgallery {
+	settings {
+		foldergallery {
+			extensions = jpg,jpeg,gif,png
+			crop = proportional
+			thumbWidth = 400
+			thumbHeight = 400
+			# template.render = fileadmin/template/foldergallery_1.html
+			# template.select.1 = fileadmin/template/foldergallery_1.html
+			# template.select.2 = fileadmin/template/foldergallery_2.html
+		}
+	}
+}

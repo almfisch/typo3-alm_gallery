@@ -1,0 +1,35 @@
+{namespace h=Tx_AlmGallery_ViewHelpers}
+
+<f:comment>
+Template Vars:
+settings
+meta
+images
+</f:comment>
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:flashMessages />
+
+<div class="row">
+	<f:for each="{images}" as="image" iteration="counter">
+		<div class="thumb_{counter.cycle} col-xs-6 col-sm-4 col-md-3">
+			<div class="gallery_thumb">
+				<a href="{image.url}" class="lightbox" rel="gallery" title="{image.name}">
+					<f:if condition="{settings.crop} == 'proportional'">
+						<f:then>
+							<f:image src="{image.url}" alt="{image.name}" title="{image.name}" maxWidth="{settings.thumbWidth}" maxHeight="{settings.thumbHeight}" />
+						</f:then>
+						<f:else>
+							<f:image src="{image.url}" alt="{image.name}" title="{image.name}" width="{settings.thumbWidth}c" height="{settings.thumbHeight}c" />
+						</f:else>
+					</f:if>
+				</a>
+			</div>
+		</div>
+	</f:for>
+</div>
+
+</f:section>

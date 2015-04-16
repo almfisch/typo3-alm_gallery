@@ -1,0 +1,75 @@
+<T3DataStructure>
+	<meta type="array">
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+	<ROOT>
+		<TCEforms>
+			<sheetTitle>LLL:EXT:alm_gallery/Resources/Private/Language/locallang_db.xml:tx_almgallery_foldergallery.sheet_1</sheetTitle>
+		</TCEforms>
+		<type>array</type>
+		<el>
+			<settings.foldergallery.flexform.templateFile>
+				<TCEforms>
+					<label>LLL:EXT:alm_gallery/Resources/Private/Language/locallang_db.xml:tx_almgallery_foldergallery.templateFile</label>
+						<config type="array">
+							<type>select</type>
+							<itemsProcFunc>Alm\almGallery\Utility\ItemsProcFunc->templateList</itemsProcFunc>
+							<maxitems>1</maxitems>
+							<size>1</size>
+						</config>
+				</TCEforms>
+			</settings.foldergallery.flexform.templateFile>
+
+			<settings.foldergallery.flexform.folderPath>
+				<TCEforms>
+					<label>LLL:EXT:alm_gallery/Resources/Private/Language/locallang_db.xml:tx_almgallery_foldergallery.folderPath</label>
+					<config>
+		        		<type>group</type>
+			            <internal_type>folder</internal_type>
+			            <maxitems>1</maxitems>
+			            <size>1</size>
+		      		</config>
+				</TCEforms>
+			</settings.foldergallery.flexform.folderPath>
+			
+			<settings.foldergallery.flexform.metaTypes>
+				<TCEforms>
+					<label>LLL:EXT:alm_gallery/Resources/Private/Language/locallang_db.xml:tx_almgallery_foldergallery.metaTypes</label>
+					<config>
+						<type>input</type>
+						<eval>trim</eval>
+						<size>25</size>
+					</config>
+				</TCEforms>
+			</settings.foldergallery.flexform.metaTypes>
+			
+			<settings.foldergallery.flexform.metaValues>
+				<TCEforms>
+					<label>LLL:EXT:alm_gallery/Resources/Private/Language/locallang_db.xml:tx_almgallery_foldergallery.metaValues</label>
+					<config>
+						<type>text</type>
+						<eval>trim</eval>
+						<size>15</size>
+						<!-- geht nicht wirklich
+						<wizards>
+							<t3editor>
+								<enableByTypeConfig>1</enableByTypeConfig>
+								<type>userFunc</type>
+								<userFunc>TYPO3\\CMS\\T3editor\\FormWizard->main</userFunc>
+								<userFunc>EXT:t3editor/Classes/class.tx_t3editor_tceforms_wizard.php:tx_t3editor_tceforms_wizard->main</userFunc>
+								<params>
+									<format>html</format>
+								</params>
+							</t3editor>
+						</wizards>
+						-->
+					</config>
+				</TCEforms>
+			</settings.foldergallery.flexform.metaValues>
+		</el>
+	</ROOT>
+	</sDEF>
+	</sheets>
+</T3DataStructure>
