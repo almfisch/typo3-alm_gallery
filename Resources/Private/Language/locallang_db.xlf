@@ -12,6 +12,9 @@
 			<trans-unit id="tx_almgallery_foldergallery.sheet_1">
 				<source>Plugin Settings</source>
 			</trans-unit>
+			<trans-unit id="tx_almgallery_foldergallery.galleryTitle">
+				<source>Gallery Title</source>
+			</trans-unit>
 			<trans-unit id="tx_almgallery_foldergallery.templateFile">
 				<source>Template File</source>
 			</trans-unit>

@@ -10,6 +10,17 @@
 		</TCEforms>
 		<type>array</type>
 		<el>
+			<settings.foldergallery.flexform.galleryTitle>
+				<TCEforms>
+					<label>LLL:EXT:alm_gallery/Resources/Private/Language/locallang_db.xml:tx_almgallery_foldergallery.galleryTitle</label>
+					<config>
+						<type>input</type>
+						<eval>trim</eval>
+						<size>25</size>
+					</config>
+				</TCEforms>
+			</settings.foldergallery.flexform.galleryTitle>
+		
 			<settings.foldergallery.flexform.templateFile>
 				<TCEforms>
 					<label>LLL:EXT:alm_gallery/Resources/Private/Language/locallang_db.xml:tx_almgallery_foldergallery.templateFile</label>
