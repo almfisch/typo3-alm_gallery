@@ -37,6 +37,8 @@ plugin.tx_almgallery.settings.foldergallery.mySetting = myValue
 
 Template Vars:
 
+_all
+element
 settings
 meta
 images

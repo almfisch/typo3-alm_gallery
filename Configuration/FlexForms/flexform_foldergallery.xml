@@ -26,7 +26,7 @@
 					<label>LLL:EXT:alm_gallery/Resources/Private/Language/locallang_db.xml:tx_almgallery_foldergallery.templateFile</label>
 						<config type="array">
 							<type>select</type>
-							<itemsProcFunc>Alm\almGallery\Utility\ItemsProcFunc->templateList</itemsProcFunc>
+							<itemsProcFunc>Alm\AlmGallery\Utility\ItemsProcFunc->templateList</itemsProcFunc>
 							<maxitems>1</maxitems>
 							<size>1</size>
 						</config>
@@ -63,19 +63,15 @@
 						<type>text</type>
 						<eval>trim</eval>
 						<size>15</size>
-						<!-- geht nicht wirklich
 						<wizards>
 							<t3editor>
-								<enableByTypeConfig>1</enableByTypeConfig>
 								<type>userFunc</type>
-								<userFunc>TYPO3\\CMS\\T3editor\\FormWizard->main</userFunc>
-								<userFunc>EXT:t3editor/Classes/class.tx_t3editor_tceforms_wizard.php:tx_t3editor_tceforms_wizard->main</userFunc>
+								<userFunc>TYPO3\CMS\T3editor\FormWizard->main</userFunc>
 								<params>
 									<format>html</format>
 								</params>
 							</t3editor>
 						</wizards>
-						-->
 					</config>
 				</TCEforms>
 			</settings.foldergallery.flexform.metaValues>

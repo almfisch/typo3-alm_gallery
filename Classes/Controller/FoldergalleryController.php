@@ -6,6 +6,12 @@ use TYPO3\CMS\Extbase\Domain\Model\File;
 
 class FoldergalleryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+	public function initializeAction()
+	{
+		$this->cObjectData = $this->configurationManager->getContentObject()->data;
+	}
+
+
 	function renderAction()
 	{
 		if($this->settings['foldergallery']['template']['render'])
@@ -36,17 +42,15 @@ class FoldergalleryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCo
 		});
 
 		$metaTypeValues = array();
+		$metaTypesTmp = array();
+		$metaValuesTmp = array();
         foreach($metaTypes as $typeKey => $typeValue)
         {
         	foreach($metaValues as $valueKey => $valueValue)
         	{
         		foreach($valueValue[$typeKey] as $key => $val)
         		{
-        			$valArr = array();
-        			$valArr['normal'] = $val;
-        			$valArr['special'] = $valArr['normal'];
-        			$valArr['special'] = strtolower($valArr['special']);
-        			$valArr['special'] = str_replace(' ', '_', $valArr['special']);
+        			$valArr = $this->makeValArray($val);
 
         			$this->gVal = $val;
         			$this->gFound = 0;
@@ -65,8 +69,11 @@ class FoldergalleryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCo
         			{
         				$metaTypeValues[$typeValue][] = $valArr;
         			}
+        			
+        			$metaValuesTmp[$valueKey][$typeKey][$key] = $valArr;
         		}
         	}
+        	$metaTypesTmp[$typeKey] = $this->makeValArray($typeValue);
         }
 
         $metaImageValues = array();
@@ -76,20 +83,15 @@ class FoldergalleryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCo
         	{
         		foreach($valueA[$keyB] as $keyC => $valueC)
         		{
-        			$valArr = array();
-        			$valArr['normal'] = $valueC;
-        			$valArr['special'] = $valArr['normal'];
-        			$valArr['special'] = strtolower($valArr['special']);
-        			$valArr['special'] = str_replace(' ', '_', $valArr['special']);
-
+        			$valArr = $this->makeValArray($valueC);
         			$metaImageValues[$keyA][$valueB][] = $valArr;
         		}
         	}
         }
 
         $meta = array(
-        	'metaTypes' => $metaTypes,
-        	'metaValues' => $metaValues,
+        	'metaTypes' => $metaTypesTmp,
+        	'metaValues' => $metaValuesTmp,
         	'metaTypeValues' => $metaTypeValues,
         	'metaImageValues' => $metaImageValues
         );
@@ -124,9 +126,24 @@ class FoldergalleryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCo
         	}
         }
 
+		$this->view->assign('element', $this->cObjectData);
 		$this->view->assign('settings', $this->settings['foldergallery']);
 		$this->view->assign('meta', $meta);
 		$this->view->assign('images', $imagesFilter);
+	}
+	
+	
+	function makeValArray($val)
+	{
+		$valArr = array();
+        $valArr['normal'] = $val;
+    	$valArr['special'] = $valArr['normal'];
+        $valArr['special'] = strtolower($valArr['special']);
+        $valArrSearch = array(' ', '.');
+        $valArrReplace = array('_', '_');
+        $valArr['special'] = str_replace($valArrSearch, $valArrReplace, $valArr['special']);
+	
+		return $valArr;
 	}
 }
 ?>
